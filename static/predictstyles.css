@@ -19,6 +19,8 @@
     width : 8%;
 }
 .navbar  {
+    
+    background-color: #ef8d8c;
     padding-top: 2rem;
     padding-left: 4rem ;
     padding-right: 4rem;
@@ -36,7 +38,7 @@
 .nav-link {
     font-size : 1.2rem;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 select{
