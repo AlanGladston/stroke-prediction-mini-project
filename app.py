@@ -10,5 +10,13 @@ def index():
 def predict():
     return render_template("predict.html")
 
+@app.route("/counsel")
+def counsel():
+    return render_template("counsel.html")
+
+@app.route("/cta")
+def cta():
+    return render_template("cta.html")
+
 if __name__ == "__main__":
     app.run()

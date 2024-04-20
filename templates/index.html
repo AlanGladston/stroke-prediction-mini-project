@@ -26,23 +26,23 @@
               
 
        <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="{{url_for('index')}}"> Stroke prediction</a>
+        <a class="navbar-brand" href="D:\stroke prediction mini project\templates\index.html"> Stroke prediction</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link " href="D:\stroke prediction mini project\templates\index.html">Home</a>
+              <a class="nav-link " href="{{ url_for('index') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pred" href="D:\stroke prediction mini project\templates\predict.html">Predict</a>
+              <a class="nav-link pred" href="{{ url_for('predict') }}">Predict</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('counsel')}}">Counsel</a>
+              <a class="nav-link" href="{{ url_for('counsel') }}">Counsel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('cta')}}">Contact</a>
+              <a class="nav-link" href="{{ url_for('cta') }}">Contact</a>
             </li>
           </ul>
         </div>
@@ -56,7 +56,7 @@
           <h1>Know if you are prone to Stroke or not.</h1>
          <h2>Is your life stressful? Do you feel anxious for no reason? Take this quiz, figure out what is going on and take control of your life ❤️</h2>
          <div class="get-started-buttons">
-          <a href="{{url_for('predict')}}">
+          <a href="{{ url_for('predict') }}">
            <button type="button" class="get-started btn btn-danger btn-lg "><i class="fab fa-heart-pulse"></i>Get started</button>
           </a>
          </div>
