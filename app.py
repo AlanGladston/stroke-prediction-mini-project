@@ -10,6 +10,10 @@ def index():
 def predict():
     return render_template("predict.html")
 
+@app.route("/predict/")
+def bmi():
+    return render_template("bmi.html")
+
 @app.route("/counsel")
 def counsel():
     return render_template("counsel.html")
