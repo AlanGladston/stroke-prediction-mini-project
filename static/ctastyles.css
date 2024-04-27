@@ -7,8 +7,13 @@ body {
     font-family: 'Merriweather', serif;
 }
 
+.id{
+    margin-left : 440px;
+}
 /* Navigation bar */
-
+.col{
+   margin-top: 10rem; 
+}
 .nav-bar-image{
     width : 8%;
 }
@@ -76,41 +81,4 @@ h2{
     display: none;
 }
 
-/* CSS for mobile devices */
-@media (max-width:640px){
-    .py-2 {
-        display: flex;
-    }
-    .py-5{
-        padding-top: 0rem !important;
-    }
-    .py-5 {
-        padding-bottom: 1.5rem!important;
-    }
-    .navbar {
-        padding-bottom: 0rem;
-        padding-top: 0.7rem;
-        padding-left: 0.7rem;
-        padding-right: 0.7rem;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        text-align: center;
-        color: rgb(195, 193, 193);
-    }
-    .nav-bar-image {
-        width: 12%;
-    }
-    .navbar-brand {
-        width: 80%;
-    }
-    h2{ 
-        margin-top: 2rem;
-        font-family: 'Raleway', sans-serif;
-        text-align: center;
-        display: block;
-        color:white;
-    }
-    .col{
-        margin-bottom:2rem;
-    }
-}
+
