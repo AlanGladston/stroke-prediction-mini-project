@@ -75,9 +75,12 @@ function validateGlu()
 
 function validateForm()
 {
+    var x = 0;
     if(!validateName() || !validateAge() || !validateBmi() || !validateGlu())
     {   
         alert("Please fill out the form correctly !! ")
         return false;
     }
+
+
 } 

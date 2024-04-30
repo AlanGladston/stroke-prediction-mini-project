@@ -7,7 +7,8 @@ body {
     font-family: 'Merriweather', serif;
 }
 
-.id{
+.pos{
+    position: absolute;
     margin-left : 57vh;
 }
 /* Navigation bar */
@@ -39,7 +40,7 @@ body {
 }
 
 body{
-    background-image: linear-gradient(to right,#010e1a ,#004883);
+    background-image: linear-gradient(to right,#010e1a ,#025f27);
     
     margin-top:20px;
 }
@@ -62,20 +63,7 @@ body{
     color: #2b2a2a;
 }
 
-.bg-info {
-    background-color: #0dcaf0!important;
-}
-.bg-bg-success {
-    background-color: #E8DDB5!important;    
-}
 
-.bg-danger {
-    background-color: #fd3550!important;
-}
-
-.bg-warning {
-    background-color: #ffc107!important;
-}
 
 .cta {
     padding-top : 25px;

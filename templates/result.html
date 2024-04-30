@@ -38,9 +38,7 @@
             <li class="nav-item">
               <a class="nav-link " href="{{url_for('index')}}">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link " href="{{url_for('predict')}}">Predict</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('counsel')}}">Counsel</a>
             </li>
@@ -61,9 +59,10 @@
                         <h5 class="mb-0 mt-5 text-dark">Results are ...</h5>
                         <p class="mb-3 text-dark"></p>
                         
-                        </div>
 
-                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -72,4 +71,12 @@
         
     </div>
 </div>
+    <div id="pos">
+
+    <div class="d-flex justify-content-center pt-3">
+        
+        <input type="submit" id="but" class="btn btn-light" value="Predict" onclick="return gotoPredict()">
+    </div>
+<script type="text/javascript" src="../static/result.js"></script>
+
 </body>

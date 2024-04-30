@@ -13,6 +13,16 @@ model = pickle.load(open('model.pickle','rb'))
 def index():
     return render_template("index.html")
 
+
+@app.route("/result",methods = ['GET','POST'])
+def result():
+    if request.method == 'POST':
+        return redirect(url_for('predict'))   
+    return render_template("result.html")
+
+
+
+
 @app.route("/predict", methods=['POST','GET'])
 @app.route("/predict/", methods=['POST','GET'])
 def predict():
@@ -118,6 +128,7 @@ def predict():
             flash(f'{name} has high risk of stroke', 'warning')
         elif prediction == 0:
             flash(f'{name} has low risk for getting stroke', 'success')
+        return redirect(url_for('result'))
     return render_template("predict.html")
 
 @app.route("/bmi")
