@@ -139,9 +139,9 @@ def predict():
 
 
         if prediction == 1:
-            flash(f'{name} has high risk of stroke', 'warning')
+            flash(f'{name} has high risk of stroke 😱', 'warning')
         elif prediction == 0:
-            flash(f'{name} has low risk for getting stroke', 'success')
+            flash(f'{name} has low risk for getting stroke 👍', 'success')
         return redirect(url_for('result'))
     return render_template("predict.html")
 
@@ -159,6 +159,7 @@ def cta():
 
 if __name__ == "__main__":
     app.run()
+    
 @app.route("/bmi")
 def bmi():
     return render_template("bmi.html")

@@ -73,3 +73,11 @@ h2{
 }
 
 
+#ans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7vh; /* Optional: This sets the height of the div to 100% of the viewport height */
+    color: #e7eaf3;
+  }
+  
