@@ -8,6 +8,9 @@ app.debug = True
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 model = pickle.load(open('model.pickle','rb'))
+dt = pickle.load(open('dt.pickle','rb'))
+lr = pickle.load(open('lr.pickle','rb'))
+rf = pickle.load(open('rf.pickle','rb'))
 
 @app.route("/")
 def index():
@@ -87,7 +90,7 @@ def predict():
             smoking_status_formerly_smoked = 0
             smoking_status_never_smoked = 1
             smoking_status_unknown = 0
-        else:
+        elif smoke == "Unknown":
             smoking_status_smokes = 0
             smoking_status_formerly_smoked = 0
             smoking_status_never_smoked = 0
@@ -122,7 +125,18 @@ def predict():
                         'gender_Female', 'gender_Male']
         df = pd.DataFrame(feature_value, columns=feature_name)
         prediction = model.predict(df)[0]
-        print(prediction)
+        prediction1 = rf.predict(df)[0]
+        prediction2 = lr.predict(df)[0]
+        prediction3 = dt.predict(df)[0]
+        print(str(prediction) + "ensembled model \n")
+
+        print(str(prediction1) + 'random forest \n')
+
+        print(str(prediction2) + 'logistic regression \n')
+
+        print(str(prediction3) + 'decision tree \n')
+
+
 
         if prediction == 1:
             flash(f'{name} has high risk of stroke', 'warning')

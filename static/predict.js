@@ -64,7 +64,7 @@ function validateBmi()
 function validateGlu()
 {
     let glu = document.getElementById('pons-glu').value;
-    if(glu.length == 0 || isNaN(glu) || (glu<80) || (glu>300))
+    if(glu.length == 0 || isNaN(glu) || (glu<70) || (glu>300))
     {
         inputglu.innerHTML = '<span class="wrong">❌</i>';
         return false;
