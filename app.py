@@ -128,6 +128,19 @@ def predict():
         prediction1 = rf.predict(df)[0]
         prediction2 = lr.predict(df)[0]
         prediction3 = dt.predict(df)[0]
+
+        model_chance=model.predict_proba(df)[0]
+        rf_chance=rf.predict_proba(df)[0]
+        lr_chance=lr.predict_proba(df)[0]
+        dt_chance=dt.predict_proba(df)[0]
+
+
+        print(f"{model_chance} ensembled model probability of ensembled result being right")
+        print(f"{rf_chance} ensembled model probability of random forest result being right")
+        print(f"{lr_chance} ensembled model probability of logistic regression result being right")
+        print(f"{dt_chance} ensembled model probability of desicion tree result being right")
+
+
         print(str(prediction) + "ensembled model \n")
 
         print(str(prediction1) + 'random forest \n')
@@ -159,7 +172,7 @@ def cta():
 
 if __name__ == "__main__":
     app.run()
-    
+
 @app.route("/bmi")
 def bmi():
     return render_template("bmi.html")
