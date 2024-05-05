@@ -139,6 +139,7 @@ def predict():
         print(f"{rf_chance} ensembled model probability of random forest result being right")
         print(f"{lr_chance} ensembled model probability of logistic regression result being right")
         print(f"{dt_chance} ensembled model probability of desicion tree result being right")
+        print(type(model_chance))
 
 
         print(str(prediction) + "ensembled model \n")
@@ -152,9 +153,9 @@ def predict():
 
 
         if prediction == 1:
-            flash(f'{name} has high risk of stroke 😱', 'warning')
+            flash(f'{name} has {round(model_chance[0],3)}% risk of stroke 😱', 'warning')
         elif prediction == 0:
-            flash(f'{name} has low risk for getting stroke 👍', 'success')
+            flash(f'{name} has {round(model_chance[1],3)}% risk for getting stroke 👍', 'success')
         return redirect(url_for('result'))
     return render_template("predict.html")
 
