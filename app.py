@@ -153,13 +153,13 @@ def predict():
 
         print(str(prediction3) + 'decision tree \n')
 
-        stroke_yes = 100*(round(model_chance[1],3))
-        stroke_no = 100*(round(model_chance[1],3))
+        stroke_yes = (round(model_chance[1]*100,3))
+        stroke_no = (round(model_chance[1]*100,3))
 
         if prediction == 1:
-            flash(f'{name} has {stroke_yes}% risk of stroke 😱', 'warning')
+            flash(f'{name} has {stroke_yes}% risk of stroke 😱 Please be cautious', 'warning')
         elif prediction == 0:
-            flash(f'{name} has {stroke_no}% risk of not getting stroke 👍', 'success')
+            flash(f'{name} has {stroke_no}% risk of getting stroke 👍 You are all good', 'success')
         return redirect(url_for('result'))
     return render_template("predict.html")
 
