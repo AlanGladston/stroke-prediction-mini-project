@@ -7,6 +7,9 @@ app = Flask(__name__)
 app.debug = True
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
+import os
+port = int(os.environ.get("PORT", 10000))
+
 model = pickle.load(open('model.pickle','rb'))
 dt = pickle.load(open('dt.pickle','rb'))
 lr = pickle.load(open('lr.pickle','rb'))
@@ -150,12 +153,13 @@ def predict():
 
         print(str(prediction3) + 'decision tree \n')
 
-
+        stroke_yes = 100*(round(model_chance[1],3))
+        stroke_no = 100*(round(model_chance[1],3))
 
         if prediction == 1:
-            flash(f'{name} has {round(model_chance[0],3)}% risk of stroke 😱', 'warning')
+            flash(f'{name} has {stroke_yes}% risk of stroke 😱', 'warning')
         elif prediction == 0:
-            flash(f'{name} has {round(model_chance[1],3)}% risk for getting stroke 👍', 'success')
+            flash(f'{name} has {stroke_no}% risk of not getting stroke 👍', 'success')
         return redirect(url_for('result'))
     return render_template("predict.html")
 
@@ -172,19 +176,4 @@ def cta():
     return render_template("cta.html")
 
 if __name__ == "__main__":
-    app.run()
-
-@app.route("/bmi")
-def bmi():
-    return render_template("bmi.html")
-
-@app.route("/counsel")
-def counsel():
-    return render_template("counsel.html")
-
-@app.route("/cta")
-def cta():
-    return render_template("cta.html")
-
-if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=port)
